@@ -12,7 +12,7 @@
 .LINK
     https://github.com/Arkafold/ManageDiscord
 .EXAMPLE
-    Send-DiscordMessage -Payload $Payload -WebhookUrl "https://discord.com/api/webhooks/etc/etc" 
+    Send-DiscordMessage -Payload $Payload -WebhookUrl "https://discord.com/api/webhooks/etc/etc"
     Takes Payload created with New-DiscordMessage and send it to the specified Discord Webhook
 #>
 
@@ -35,7 +35,7 @@ function Send-DiscordMessage {
     if ($PSBoundParameters.ContainsKey('LogJson')) {
         $Payload | ConvertTo-Json -Depth 100 | Out-File ".\logs\Payload.json" -Force
     }
-    
+
     try {
         $response = Invoke-RestMethod -Uri $WebhookUrl -Method Post -Body ($Payload | ConvertTo-Json -Depth 100) -ContentType 'Application/Json'
         # Assuming the response is a dictionary, you can access its properties

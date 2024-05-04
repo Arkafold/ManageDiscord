@@ -16,7 +16,7 @@
 .LINK
     https://github.com/Arkafold/ManageDiscord
 .EXAMPLE
-    Add-DiscordEmbed -Title "Your title here" -Description "Your body message here" -ThumbnailUrl "Https://yourdomain.com/yourimage.png" 
+    Add-DiscordEmbed -Title "Your title here" -Description "Your body message here" -ThumbnailUrl "Https://yourdomain.com/yourimage.png"
     Returns a new Payload object with your embed with a Title, a Description and a Thumbnail
 #>
 
