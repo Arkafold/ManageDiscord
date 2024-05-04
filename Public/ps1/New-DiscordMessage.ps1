@@ -20,7 +20,7 @@
 
 function New-DiscordMessage {
 
-    [CmdletBinding()]
+    [CmdletBinding(SupportsShouldProcess)]
     [Alias()]
 
     param (
@@ -53,7 +53,7 @@ function New-DiscordMessage {
     if ($PSBoundParameters.ContainsKey('EmbedArray')) {
         $payload | Add-Member -MemberType NoteProperty -Name 'embeds' -Value $EmbedArray -Force
     }
-    
+
     return $payload
 
 }

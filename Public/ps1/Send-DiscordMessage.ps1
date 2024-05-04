@@ -54,5 +54,5 @@ function Send-DiscordMessage {
             Write-Verbose "Error: $_"
         }
     }
-    
+
 }
