@@ -14,13 +14,13 @@
 .LINK
     https://github.com/Arkafold/ManageDiscord
 .EXAMPLE
-    New-DiscordMessage -Message "Your message here" -Username "YourUsername" -AvatarUrl "https://yourdomain.com/youravatar.png"
+    Set-DiscordMessage -Message "Your message here" -Username "YourUsername" -AvatarUrl "https://yourdomain.com/youravatar.png"
     Returns a PSCustomObject payload for use with the Send-DiscordMessage function.
 #>
 
-function New-DiscordMessage {
+function Set-DiscordMessage {
 
-    [CmdletBinding(SupportsShouldProcess)]
+    [CmdletBinding()]
     [Alias()]
 
     param (
