@@ -48,10 +48,10 @@ function Send-DiscordMessage {
         if ($_.Exception.Response) {
             $statusCode = $_.Exception.Response.StatusCode.value__
             $statusDescription = $_.Exception.Response.StatusDescription
-            Write-Host "Status Code: $statusCode"
-            Write-Host "Status Description: $statusDescription"
+            Write-Verbose "Status Code: $statusCode"
+            Write-Verbose "Status Description: $statusDescription"
         } else {
-            Write-Host "Error: $_"
+            Write-Verbose "Error: $_"
         }
     }
     
