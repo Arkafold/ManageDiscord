@@ -59,7 +59,7 @@ function Add-DiscordEmbed {
     } else {
         $Payload = New-DiscordMessage -embed $embedArray
     }
-    
+
     return $Payload
 
-} 
+}
