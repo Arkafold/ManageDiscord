@@ -57,7 +57,7 @@ function Add-DiscordEmbed {
     if ($PSBoundParameters.ContainsKey('Payload')) {
         $Payload | Add-Member -MemberType NoteProperty -Name 'embeds' -Value $embedArray
     } else {
-        $Payload = New-DiscordMessage -embed $embedArray
+        $Payload = Set-DiscordMessage -embed $embedArray
     }
 
     return $Payload

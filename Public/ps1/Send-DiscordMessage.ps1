@@ -4,7 +4,7 @@
 .DESCRIPTION
     This function takes a PSCustomObject Payload, converts it to JSON and uses the provided Url to send a message to a Discord Webhook.
 .PARAMETER Payload
-    Mandatory Payload PSCustomObject created by New-DiscordMessage.
+    Mandatory Payload PSCustomObject created by Set-DiscordMessage.
 .PARAMETER WebhookUrl
     Mandatory URL of the Webhook of the Discord channel you want your message to be send to.
 .PARAMETER LogJson
@@ -13,7 +13,7 @@
     https://github.com/Arkafold/ManageDiscord
 .EXAMPLE
     Send-DiscordMessage -Payload $Payload -WebhookUrl "https://discord.com/api/webhooks/etc/etc"
-    Takes Payload created with New-DiscordMessage and send it to the specified Discord Webhook
+    Takes Payload created with Set-DiscordMessage and send it to the specified Discord Webhook
 #>
 
 function Send-DiscordMessage {
