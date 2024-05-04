@@ -20,7 +20,7 @@
 
 function Set-DiscordMessage {
 
-    [CmdletBinding()]
+    [CmdletBinding(SupportsShouldProcess)]
     [Alias()]
 
     param (
@@ -54,6 +54,10 @@ function Set-DiscordMessage {
         $payload | Add-Member -MemberType NoteProperty -Name 'embeds' -Value $EmbedArray -Force
     }
 
-    return $payload
+    if ($PSCmdlet.ShouldProcess("payload", "return")) {
+        return $payload
+    } elseif ($WhatIfPreference.IsPresent) {
+        $Payload | ConvertTo-Json -Depth 100 | Write-Output
+    }
 
 }
