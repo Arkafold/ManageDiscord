@@ -11,7 +11,7 @@ name: PSScriptAnalyzer
 
 on:
   push:
-    branches: [ "main", "Main-protection" ]
+    branches: [ "main", "Main-protection", "dev" ]
   pull_request:
     branches: [ "main" ]
   schedule:
