@@ -46,7 +46,8 @@ function Set-DiscordMessage {
 
     #if the $AvatarUrl parameter is filled, pass it to the payload
     if ($PSBoundParameters.ContainsKey('AvatarUrl')) {
-        $payload | Add-Member -MemberType NoteProperty -Name 'avatar_url' -Value $AvatarUrl -Force
+        $url = Test-ImageUrl -Url $AvatarUrl
+        $payload | Add-Member -MemberType NoteProperty -Name 'avatar_url' -Value $url -Force
     }
 
     #If the EmbedArray paramater is filled, add it to the payload

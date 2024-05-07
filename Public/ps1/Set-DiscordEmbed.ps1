@@ -51,7 +51,8 @@ function Set-DiscordEmbed {
 
         #If the ThumbnailUrl parameter is passed, create the thumbnailObject and pass this to the embedObject
         if ($PSBoundParameters.ContainsKey('ThumbnailUrl')) {
-            New-EmbedThumbnail -ThumbnailUrl $ThumbnailUrl -EmbedObject $embedObject
+            $url = Test-ImageUrl -Url $ThumbnailUrl
+            New-EmbedThumbnail -ThumbnailUrl $url -EmbedObject $embedObject
         }
 
         $newEmbedArray.Add($embedObject) | Out-Null
