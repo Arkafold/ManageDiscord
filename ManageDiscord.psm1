@@ -50,12 +50,3 @@ if ($functionsAdded -or $functionsRemoved -or $aliasesAdded -or $aliasesRemoved)
     }
 
 }
-
-# Read the content from 'ManageDiscord.psd1' as UTF-8
-$Content = Get-Content -Path $moduleManifest -Encoding UTF8
-
-# Add the BOM (Byte Order Mark) manually
-$Utf8Bom = [System.Text.Encoding]::UTF8.GetPreamble() + $Content
-
-# Write the modified content to 'ManageDiscord.psd1'
-$Utf8Bom | Set-Content -Path $moduleManifest -Encoding UTF8
